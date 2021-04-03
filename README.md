@@ -1,6 +1,16 @@
-# Mixing Terraform Official and Community Providers Within a Module
+# Test AzureRM Provider Fork
 
-Suppose that you use Terraform modules to subdivide your infrastructure code in some way. Further suppose that an official Hashicorp provider doesn't support the latest features that your use case requires for a particular resource type. What now? It's reasonable to assume that a badass utility like Terraform allows you to specify a community provider at the resource level inside a module, right?
+Status of this project: Work in progress
+
+Due to https://github.com/jakewan/test-azurerm-provider-fork/issues/1, the Terraform can successfully generate a plan to build an Azure Stream Analytics job with compatibility level 1.2, but it fails when you try to apply the changes. This is due to the naive approach I attempted to add the missing feature. The error reported by the API offers the correct solution. Until I've had a chance to follow-up on that, **this project is broken**.
+
+## Mixing an official Terraform provider and a community provider of the same type within a child module
+
+This project demonstrates a solution for the following use case:
+
+1. You use Terraform modules to subdivide your infrastructure code in some way.
+2. An official Terraform provider doesn't support the latest features that your use case requires for a particular resource type.
+3. You have chosen to fork the Terraform provider to obtain the missing functionality. Based on the fork, you have published a community provider in the [Terraform Registry](https://registry.terraform.io).
 
 Well, it might not be abundantly clear from the official documentation (as I write this), but...
 
