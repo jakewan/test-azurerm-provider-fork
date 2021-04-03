@@ -2,13 +2,13 @@ provider "azurerm" {
   features {}
 }
 
-provider "azurermofficial" {
+provider "azurerm-forked" {
   features {}
 }
 
 resource "azurerm_stream_analytics_job" "foo" {
   name                 = "asa-job-foo"
-  provider             = azurerm
+  provider             = azurerm-forked
   resource_group_name  = var.resource_group_name
   location             = var.location
   compatibility_level  = "1.2"
@@ -18,7 +18,7 @@ resource "azurerm_stream_analytics_job" "foo" {
 
 resource "azurerm_stream_analytics_job" "bar" {
   name                 = "asa-job-bar"
-  provider             = azurermofficial
+  provider             = azurerm
   resource_group_name  = var.resource_group_name
   location             = var.location
   compatibility_level  = "1.1"

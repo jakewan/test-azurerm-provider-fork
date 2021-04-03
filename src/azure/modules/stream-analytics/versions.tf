@@ -1,10 +1,10 @@
 terraform {
   required_providers {
-    azurerm = {
+    azurerm-forked = {
       source  = "cbsinteractive/azurerm"
       version = "2.55.0"
     }
-    azurermofficial = {
+    azurerm = {
       source  = "hashicorp/azurerm"
       version = "2.53.0"
     }
