@@ -46,3 +46,11 @@ resource "awesomeservice_badass_resource" "bar" {
   provider             = awesomeservice
 }
 ```
+
+# This Repository
+
+This repository presents an example of this particular use case being met based on the configuration prototype presented above.
+
+The root module specifies an Azure resource group named `rg-foo` and instantiates a module labeled `jobs`, passing it the name of that resource group and its location. It does not pass any information about the provider(s) that should be used to manage resource defined inside the module. This is the key point, because it _feels_ like Hashicorp intends for modules to require their consumers to provide all of the provider context at runtime. This example demonstrates behavior to the contrary.
+
+The key ingredient seems to be that the module includes its own `terraform` block, where the official and unofficial providers of the AzureRM provider are defined.
