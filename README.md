@@ -19,7 +19,7 @@ The solution comes from two different places in the documentation:
 * [Provider Version Constraints in Modules](https://www.terraform.io/docs/language/modules/develop/providers.html#provider-version-constraints-in-modules) explains that a child module should include its own `terraform` configuration block containing a `required_providers` block to specify the desired provider versions.
 * [Handling Local Name Conflicts](https://www.terraform.io/docs/language/providers/requirements.html#handling-local-name-conflicts) explains how to use two different providers of the same "type".
 
-For example, in module/versions.tf
+For example, in module/versions.tf:
 
 ```hcl
 terraform {
@@ -67,3 +67,5 @@ resource "someservice_some_resource" "bar" {
 This repository presents an example of this particular use case being met based on the configuration prototype presented above.
 
 The root module specifies an Azure resource group named `rg-foo` and instantiates a module labeled `jobs`, passing it the name of that resource group and its location. It does not pass any information about the provider(s) that should be used to manage resource defined inside the module.
+
+Within the child module, there are two Azure Stream Analytics job configurations. One uses compatibility level 1.1 and the other uses compatibility level 1.2. Since compatibility level 1.2 is not currently supported by the official provider, we use a community provider with support for compatibility level 1.2 to manage *only* the resource that requires it.
