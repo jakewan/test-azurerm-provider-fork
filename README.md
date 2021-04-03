@@ -12,7 +12,7 @@ This project demonstrates a solution for the following use case:
 2. An official Terraform provider doesn't support the latest features that your use case requires for a particular resource type.
 3. You have chosen to fork the Terraform provider to obtain the missing functionality. Based on the fork, you have published a community provider in the [Terraform Registry](https://registry.terraform.io).
 4. The resource that you want managed by the community provider resides inside a child module.
-5. Other resources reside in the same child module that you want to remain managed by the official provider.
+5. Within the same child module, there are other resources that should remain managed by the official provider.
 
 The solution comes from two different places in the documentation:
 
