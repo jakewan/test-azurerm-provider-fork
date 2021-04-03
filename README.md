@@ -6,7 +6,7 @@ Well, it might not be abundantly clear from the official documentation (as I wri
 
 ## It Does, It Really Does
 
-This repository contains an example that seems to work. Just ignore any suggesting that modules shouldn't be too stronghanded about the context in which they are instantiated, and boldly provide a `terraform` block specifying crazy stuff like this:
+This repository contains an example that seems to work. Just ignore any suggestions that modules shouldn't be too stronghanded about the context in which they are instantiated. Boldly provide a `terraform` block specifying crazy stuff like this:
 
 ```hcl
 terraform {
