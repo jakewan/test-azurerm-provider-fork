@@ -3,3 +3,6 @@ init-and-plan:
 	cd src/azure && rm -f .terraform.lock.hcl
 	cd src/azure && terraform init
 	cd src/azure && terraform plan
+
+plan:
+	cd src/azure && terraform plan
